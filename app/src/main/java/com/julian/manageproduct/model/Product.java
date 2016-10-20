@@ -86,7 +86,8 @@ public class Product {
 
     @Override
     public String toString() {
-        return this.mName;
+        String salida =this.mName + "  "+ this.mDosage+ "  "+this.mDescription;
+        return  salida;
     }
 
 /*
