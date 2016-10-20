@@ -1,6 +1,7 @@
 package com.julian.manageproduct;
 
 import android.app.ListActivity;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -32,6 +33,10 @@ public class ListProduct_Activity extends ListActivity {
         //CASO 1: Adapter no personalizado      toma el adapter no personalizado de android
         adapter= new ArrayAdapter<Product>(this, android.R.layout.simple_list_item_1,((Product_Aplication) getApplication()).getProducts());
         getListView().setAdapter(adapter);
+
+
+        //CASO 2: Adapter personalizado
+
 
     }
 
