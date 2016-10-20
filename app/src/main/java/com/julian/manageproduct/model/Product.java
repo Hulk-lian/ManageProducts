@@ -1,21 +1,19 @@
 package com.julian.manageproduct.model;
 
-/**
- * Created by usuario on 19/10/16.
- */
-
 public class Product {
     private int mId;
     private String mName;
     private String mDescription;
+    private String mDosage;
     private String mBrand;
     private double mPrice;
     private int mStock;
     private int mImage;
 
-    public Product(String mName, String mDescription, String mBrand, double mPrice, int mStock, int mImage) {
+    public Product(String mName, String mDescription,String mDosage, String mBrand, double mPrice, int mStock, int mImage) {
         this.mName = mName;
         this.mDescription = mDescription;
+        this.mDosage=mDosage;
         this.mBrand = mBrand;
         this.mPrice = mPrice;
         this.mStock = mStock;
@@ -44,6 +42,14 @@ public class Product {
 
     public void setmDescription(String mDescription) {
         this.mDescription = mDescription;
+    }
+
+    public String getmDosage() {
+        return mDosage;
+    }
+
+    public void setmDosage(String mDescription) {
+        this.mDosage = mDosage;
     }
 
     public String getmBrand() {
@@ -84,6 +90,7 @@ public class Product {
                 "mId=" + mId +
                 ", mName='" + mName + '\'' +
                 ", mDescription='" + mDescription + '\'' +
+                ", mDosage='" + mDosage + '\''+
                 ", mBrand='" + mBrand + '\'' +
                 ", mPrice=" + mPrice +
                 ", mStock=" + mStock +
