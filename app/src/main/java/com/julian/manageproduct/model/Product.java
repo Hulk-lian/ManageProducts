@@ -86,15 +86,38 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{" +
-                "mId=" + mId +
-                ", mName='" + mName + '\'' +
-                ", mDescription='" + mDescription + '\'' +
-                ", mDosage='" + mDosage + '\''+
-                ", mBrand='" + mBrand + '\'' +
-                ", mPrice=" + mPrice +
-                ", mStock=" + mStock +
-                ", mImage=" + mImage +
-                '}';
+        return this.mName;
+    }
+
+/*
+* dos productos son iguales cuando tienen el mismo nombre, marca y concentracion
+* */
+
+    @Override
+    public boolean equals(Object o) {
+        boolean resultado=false;
+        Product product = (Product) o;
+
+        if (this == o)
+            resultado= true;
+
+        if (o == null || getClass() != o.getClass())
+            resultado = false;
+
+        if (!mName.equals(product.mName) || !mDosage.equals(product.mDosage))
+            resultado= false;
+
+        resultado=mBrand.equals(product.mBrand);
+
+        return resultado;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = mName.hashCode();
+        result = 31 * result + mDosage.hashCode();
+        result = 31 * result + mBrand.hashCode();
+        return result;
     }
 }
