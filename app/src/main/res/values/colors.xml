@@ -4,4 +4,5 @@
     <color name="colorPrimaryDark">#aed581</color>
     <color name="colorAccent">#76ff03</color>
     <color name="colorLetra">#000</color>
+    <color name="colorLinea">#2e7d32</color>
 </resources>
