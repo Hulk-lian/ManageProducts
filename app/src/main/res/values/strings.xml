@@ -9,4 +9,12 @@
     <string name="Image">Imagen</string>
     <string name="TitleES">Añadir un producto</string>
     <string name="btnSaveES">Guardar</string>
+    <string name="searchES">Buscar</string>
+    <string name="AddProduct">Nuevo Producto</string>
+
+    <string-array name="listUnit">
+        <item>mg</item>
+        <item>g</item>
+        <item>ml</item>
+    </string-array>
 </resources>

@@ -11,16 +11,31 @@
     tools:context="com.julian.manageproduct.ListProduct_Activity">
 
 
-    <AutoCompleteTextView
-        android:text=""
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/actTextoBusqueda" />
-
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@android:id/list"
         android:layout_below="@+id/actTextoBusqueda" />
+
+    <AutoCompleteTextView
+        android:text=""
+        android:hint="@string/searchES"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/actTextoBusqueda"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/btnAdd"
+        android:layout_toStartOf="@+id/btnAdd" />
+
+    <Button
+        android:text="@string/AddProduct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/btnAdd"
+        android:onClick="clickAdd"/>
 
 </RelativeLayout>

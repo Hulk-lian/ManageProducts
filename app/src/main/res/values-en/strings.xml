@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ManageProduct</string>
+    <string name="TitleES">Add Product</string>
+    <string name="Stock">Stock</string>
+    <string name="AddProduct">New Product</string>
+    <string name="BrandES">Brand Name</string>
+    <string name="DescripES">Description</string>
+    <string name="DosageES">Dosage</string>
+    <string name="Image">Image</string>
+    <string name="NameES">Name</string>
+    <string name="PriceES">Price</string>
+    <string name="btnSaveES">Save</string>
+    <string name="searchES">Find</string>
+</resources>

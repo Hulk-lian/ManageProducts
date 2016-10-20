@@ -45,21 +45,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/PriceES"
-        android:layout_below="@+id/edtBrand"/>
-
-    <EditText
-        android:id="@+id/edtDosage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/DosageES"
-        android:layout_below="@+id/edtDescrip"
-        android:layout_alignRight="@+id/txvTitulo"
-        android:layout_alignEnd="@+id/txvTitulo" />
+        android:inputType="numberDecimal"
+        android:layout_below="@+id/edtBrand"
+        android:layout_toLeftOf="@+id/edtStock"
+        android:layout_toStartOf="@+id/edtStock" />
 
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/spinner3"
+        android:id="@+id/spnUnitDosage"
         android:layout_above="@+id/edtBrand"
         android:layout_below="@+id/edtDescrip"
         android:layout_toRightOf="@+id/edtDosage"
@@ -70,10 +64,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/Stock"
+        android:inputType="numberDecimal"
         android:layout_alignBaseline="@+id/edtPrice"
         android:layout_alignBottom="@+id/edtPrice"
         android:layout_toRightOf="@+id/edtDosage"
         android:layout_toEndOf="@+id/edtDosage"/>
+
+    <Button
+        android:text="@string/btnSaveES"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSave"
+        android:layout_alignBottom="@+id/imgVImage"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="clickbtn"/>
 
     <ImageView
         android:id="@+id/imgVImage"
@@ -82,16 +87,22 @@
         android:layout_height="200dp"
         android:layout_below="@+id/edtPrice"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:clickable="true"
+        android:onClick="clickImg"
+        />
 
-    <Button
-        android:text="@string/btnSaveES"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/edtDosage"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button"
-        android:layout_alignBottom="@+id/imgVImage"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:hint="@string/DosageES"
+        android:inputType="number"
+        android:layout_below="@+id/edtDescrip"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/imgVImage"
+        android:layout_alignEnd="@+id/imgVImage" />
 
 
 </RelativeLayout>
