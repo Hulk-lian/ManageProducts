@@ -10,4 +10,88 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.julian.manageproduct.AddProduct_Activity">
 
+    <TextView
+        android:text="@string/TitleES"
+        android:textSize="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/txvTitulo" />
+
+    <EditText
+        android:id="@+id/edtName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/NameES"
+        android:layout_below="@id/txvTitulo"/>
+
+    <EditText
+        android:id="@+id/edtDescrip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/DescripES"
+        android:layout_below="@+id/edtName"
+        android:maxLines="10"/>
+
+    <EditText
+        android:id="@+id/edtBrand"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/BrandES"
+        android:layout_below="@+id/edtDosage"/>
+
+    <EditText
+        android:id="@+id/edtPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/PriceES"
+        android:layout_below="@+id/edtBrand"/>
+
+    <EditText
+        android:id="@+id/edtDosage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/DosageES"
+        android:layout_below="@+id/edtDescrip"
+        android:layout_alignRight="@+id/txvTitulo"
+        android:layout_alignEnd="@+id/txvTitulo" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner3"
+        android:layout_above="@+id/edtBrand"
+        android:layout_below="@+id/edtDescrip"
+        android:layout_toRightOf="@+id/edtDosage"
+        android:layout_toEndOf="@+id/edtDosage" />
+
+    <EditText
+        android:id="@+id/edtStock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/Stock"
+        android:layout_alignBaseline="@+id/edtPrice"
+        android:layout_alignBottom="@+id/edtPrice"
+        android:layout_toRightOf="@+id/edtDosage"
+        android:layout_toEndOf="@+id/edtDosage"/>
+
+    <ImageView
+        android:id="@+id/imgVImage"
+        android:src="@mipmap/ic_launcher"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_below="@+id/edtPrice"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="@string/btnSaveES"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button"
+        android:layout_alignBottom="@+id/imgVImage"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+
 </RelativeLayout>

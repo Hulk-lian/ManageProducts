@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">ManageProduct</string>
-
+    <string name="NameES">Nombre</string>
+    <string name="DescripES">Descripcion</string>
+    <string name="DosageES">Dosis</string>
+    <string name="BrandES">Marca</string>
+    <string name="PriceES">Precio</string>
+    <string name="Stock">Stock</string>
+    <string name="Image">Imagen</string>
+    <string name="TitleES">Añadir un producto</string>
+    <string name="btnSaveES">Guardar</string>
 </resources>
