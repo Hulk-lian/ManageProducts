@@ -90,7 +90,7 @@ public class Product {
         return String.format(Locale.getDefault(),"%d u.",mStock);
     }
     public String getFormatedPrice(){
-        return String.format(Locale.getDefault(),"$%s",mPrice);
+        return String.format(Locale.getDefault(),"%s dineros",mPrice);
     }
     @Override
     public String toString() {

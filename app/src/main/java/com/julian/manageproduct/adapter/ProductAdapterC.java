@@ -71,12 +71,11 @@ public class ProductAdapterC extends ArrayAdapter<Product> {
             item.setBackgroundResource(R.color.colorFondo2);
         }
 
-
         return item;
     }
 
     /**
-     * Cla
+     * Clase interna holder
      * */
     class ProductHolder{
         ImageView imgProd;

@@ -13,7 +13,7 @@ import android.widget.Toast;
 public class AddProduct_Activity extends AppCompatActivity {
 
     //array adpter for the spinner
-    //ArrayAdapter<CharSequence> arrayAdapter=ArrayAdapter.createFromResource(this,R.array.listUnit,android.R.layout.simple_spinner_item);
+    ArrayAdapter<CharSequence> arrayAdapter=ArrayAdapter.createFromResource(this,R.array.listUnit,android.R.layout.simple_spinner_item);
 
     private Spinner spOptions;
     private Button btnSave;
@@ -41,8 +41,8 @@ public class AddProduct_Activity extends AppCompatActivity {
 
 
         //*----------------------------------*//
-      //  arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-      //  spOptions.setAdapter(arrayAdapter);
+         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+         spOptions.setAdapter(arrayAdapter);
     }
 
     //cargar las diferentes opciones cuando se crea la activity
