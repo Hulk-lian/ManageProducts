@@ -1,5 +1,7 @@
 package com.julian.manageproduct.model;
 
+import java.util.Locale;
+
 public class Product {
     private int mId;
     private String mName;
@@ -84,6 +86,12 @@ public class Product {
         this.mImage = mImage;
     }
 
+    public String getFormatedStock(){
+        return String.format(Locale.getDefault(),"%d u.",mStock);
+    }
+    public String getFormatedPrice(){
+        return String.format(Locale.getDefault(),"$%s",mPrice);
+    }
     @Override
     public String toString() {
         String salida =this.mName + "  "+ this.mDosage+ "  "+this.mDescription;

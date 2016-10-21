@@ -2,15 +2,11 @@ package com.julian.manageproduct;
 
 import android.app.ListActivity;
 import android.content.Intent;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 
-import com.julian.manageproduct.model.Product;
+import com.julian.manageproduct.adapter.ProductAdapterA;
 
 //internamente tiene un tipo definido que es lista
 //nuestra interfaz se añadira un elemento llamado list view
@@ -33,7 +29,8 @@ public class ListProduct_Activity extends ListActivity {
     //variables
    private Button btnAdd;
 
-   private ArrayAdapter<Product> adapter;//creacion de un array adapter para el caso 1
+    //private ArrayAdapter<Product> adapter;//creacion de un array adapter para el caso 1
+    private ProductAdapterA adapter; //creacion de un adapter del tipo product (custom adapter)
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,13 +40,15 @@ public class ListProduct_Activity extends ListActivity {
         btnAdd=(Button)findViewById(R.id.btnAdd);
 
         //CASO 1: Adapter no personalizado      toma el adapter no personalizado de android
-        adapter= new ArrayAdapter<Product>(this, android.R.layout.simple_list_item_1,((Product_Aplication) getApplication()).getProducts());
-        getListView().setAdapter(adapter);
+       // adapter= new ArrayAdapter<Product>(this, android.R.layout.simple_list_item_1,((Product_Aplication) getApplication()).getProducts());
+
 
 
         //CASO 2: Adapter personalizado
+        adapter= new ProductAdapterA(this);
 
 
+        getListView().setAdapter(adapter);
     }
 
 

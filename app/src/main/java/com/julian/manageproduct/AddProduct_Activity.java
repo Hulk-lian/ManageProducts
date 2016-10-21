@@ -59,8 +59,8 @@ public class AddProduct_Activity extends AppCompatActivity {
         if (intent.resolveActivity(getPackageManager()) != null)
             startActivityForResult(intent,1);
         else
-
-            Toast.makeText(this, "No hay aplicación para manejar ficheros", Toast.LENGTH_SHORT).show();*/
+*/
+            //Toast.makeText(this, "click en imagen", Toast.LENGTH_SHORT).show();
     }
 
     @Override
