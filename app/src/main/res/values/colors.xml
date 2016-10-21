@@ -5,4 +5,6 @@
     <color name="colorAccent">#76ff03</color>
     <color name="colorLetra">#000</color>
     <color name="colorLinea">#2e7d32</color>
+    <color name="colorFondo1">#ccff90</color>
+    <color name="colorFondo2">#9ccc65</color>
 </resources>

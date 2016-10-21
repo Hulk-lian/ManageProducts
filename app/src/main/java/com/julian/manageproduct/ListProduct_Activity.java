@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 
 import com.julian.manageproduct.adapter.ProductAdapterA;
+import com.julian.manageproduct.adapter.ProductAdapterB;
+import com.julian.manageproduct.adapter.ProductAdapterC;
 
 //internamente tiene un tipo definido que es lista
 //nuestra interfaz se añadira un elemento llamado list view
@@ -30,7 +32,9 @@ public class ListProduct_Activity extends ListActivity {
    private Button btnAdd;
 
     //private ArrayAdapter<Product> adapter;//creacion de un array adapter para el caso 1
-    private ProductAdapterA adapter; //creacion de un adapter del tipo product (custom adapter)
+   // private ProductAdapterA adapter; //creacion de un adapter del tipo product (custom adapter)
+    //private ProductAdapterB adapter;
+    private ProductAdapterC adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,8 +48,14 @@ public class ListProduct_Activity extends ListActivity {
 
 
 
-        //CASO 2: Adapter personalizado
-        adapter= new ProductAdapterA(this);
+        //CASO 2: AdapterA personalizado
+       // adapter= new ProductAdapterA(this);
+
+        //CASO 2: AdapterB personalizado
+       // adapter= new ProductAdapterB(this);
+
+        //CASO 2: AdapterC personalizado
+         adapter= new ProductAdapterC(this);
 
 
         getListView().setAdapter(adapter);

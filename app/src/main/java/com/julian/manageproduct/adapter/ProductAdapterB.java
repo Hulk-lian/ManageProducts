@@ -26,16 +26,22 @@ public class ProductAdapterB extends ArrayAdapter<Product> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
+        View item=convertView;
         ImageView imgProd;
         View viwLinea;
         TextView txvStockCA,txvNameCA,txvPriceCA;
 
-        //1.crear un objeto inflaer que incicializamos al Layout inflater del contexto
-        LayoutInflater inflater =(LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        //si el item ya tiene memoria lo usa.
+        //utiliza la misma zona de memoria, la reutiliza
+        if(item==null) {
+            //1.crear un objeto inflaer que incicializamos al Layout inflater del contexto
+            LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
 
-        //2.inflar la vista . crear en memoria el objeto view que contienen los widgets
-        View item= inflater.inflate(R.layout.item_list_product,null);
+            //2.inflar la vista . crear en memoria el objeto view que contienen los widgets
+            item = inflater.inflate(R.layout.item_list_product, null);
+
+        }
 
         //3.vinculado con el item(view), que se acaba de crear, con las variables
         imgProd=(ImageView) item.findViewById(R.id.imgProd);
