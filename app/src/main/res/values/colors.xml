@@ -7,4 +7,8 @@
     <color name="colorLinea">#2e7d32</color>
     <color name="colorFondo1">#ccff90</color>
     <color name="colorFondo2">#9ccc65</color>
+
+    <color name="error">#FF0000</color>
+    <color name="white">#FFF</color>
+
 </resources>

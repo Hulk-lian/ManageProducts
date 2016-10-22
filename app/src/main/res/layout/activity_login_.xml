@@ -9,26 +9,25 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.julian.manageproduct.login.Login_Activity"
-    >
+    tools:context="com.julian.manageproduct.Login_Activity">
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:id="@+id/til_user"
+        android:id="@+id/tilUser"
         app:errorEnabled="true"
-        app:errorTextAppearance="@color/errores"
+        app:errorTextAppearance="@color/error"
         app:counterMaxLength="20">
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:hint="@string/hint_user"
+            android:hint="@string/hintUser"
             android:ems="10"
-            android:id="@+id/et_user"
+            android:id="@+id/edtUser"
             android:maxLength="20"
             />
 
@@ -38,9 +37,9 @@
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/til_password"
+        android:id="@+id/tilPassword"
         app:errorTextAppearance="@color/errores"
-        android:layout_below="@id/til_user"
+        android:layout_below="@id/tilUser"
         app:counterEnabled="true"
         app:errorEnabled="true"
         app:counterMaxLength="20">
@@ -49,7 +48,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/hint_pass"
+            android:hint="@string/hintPass"
             android:inputType="textPassword"
             android:id="@+id/et_passwd"
             android:maxLength="20"
@@ -63,7 +62,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/cb_remeber"
-        android:layout_below="@id/til_password"
+        android:layout_below="@id/tilPassword"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="@dimen/widget_margin_top"/>
@@ -76,4 +75,6 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/cb_remeber"
         android:id="@+id/bt_login"/>
+
+
 </RelativeLayout>

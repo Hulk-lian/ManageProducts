@@ -1,12 +1,9 @@
-package com.julian.manageproduct.login;
+package com.julian.manageproduct;
 
 import android.content.Context;
 
+import com.julian.manageproduct.ILogin;
 import com.julian.manageproduct.R;
-
-/**
- * Created by Hulk-lián on 22/10/2016.
- */
 
 public class LoginPresenter implements ILogin.Presenter {
 
@@ -37,24 +34,25 @@ public class LoginPresenter implements ILogin.Presenter {
                         }
                         else { //No tiene digitos
                             mensRes = ((Context) msgView).getResources().getString(R.string.passDigit);
-                            
-                            mensRes = R.id.et_passwd;
+                           // errCode= R.id.et_passwd;
                         }
                     else { //No tiene mayuscula
                         mensRes = ((Context) msgView).getResources().getString(R.string.passCase);
-                        idOut = R.id.et_passwd;
+                        //errCode= R.id.et_passwd;
                     }
                 else { //No tiene Minimo 8
                     mensRes = ((Context) msgView).getResources().getString(R.string.passMinLength);
-                    idOut = R.id.et_passwd;
+                   // errCode = R.id.et_passwd;
                 }
             else{
-                mensRes = ((Context)msgView).getResources().getString(R.string.data_empty);
-                idOut = R.id.et_passwd;
+                mensRes = ((Context)msgView).getResources().getString(R.string.dataEmpty);
+               // errCode = R.id.et_passwd;
             }
         else {
-            mensRes = ((Context) msgView).getResources().getString(R.string.data_empty);
-            idOut = R.id.et_user;
+            mensRes = ((Context) msgView).getResources().getString(R.string.dataEmpty);
+           // errCode = R.id.et_user;
         }
+
+        msgView.setMessageError(mensRes,errCode);
     }
 }

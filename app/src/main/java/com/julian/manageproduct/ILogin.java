@@ -1,4 +1,4 @@
-package com.julian.manageproduct.login;
+package com.julian.manageproduct;
 
 public interface ILogin {
 
@@ -8,7 +8,7 @@ public interface ILogin {
     int DATA_EMPTY=4;
 
     interface msgView{
-        public void setMessageError(String error);
+        public void setMessageError(String error, int errcCode);
     }
     interface Presenter{
         public void validateCredentials(String user,String pass);

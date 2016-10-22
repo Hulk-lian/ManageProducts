@@ -15,4 +15,10 @@
     <string name="passCase">Password must contain at least one uppercase letter.</string>
     <string name="passDigit">Password must contain at least one digit</string>
     <string name="passMinLength">"The password must be at least 8 characters long. "</string>
+    <string name="btnLogin">Login</string>
+    <string name="SpinnerES">Choose one</string>
+    <string name="cbText">Remember</string>
+    <string name="hintPass">Pass</string>
+    <string name="hintUser">User</string>
+    <string name="loginOk">Correct login</string>
 </resources>

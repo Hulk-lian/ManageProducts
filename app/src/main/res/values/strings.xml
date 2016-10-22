@@ -23,7 +23,10 @@
     <string name="passCase">La clave debe de contener al menos una letra mayuscula</string>
     <string name="passDigit">La clave debe de contener al menos un numero</string>
     <string name="passMinLength">La clave debe de contener al menos 8 caracteres</string>
+    <string name="dataEmpty">El campo está vacio</string>
     <string name="cbText">Recordar</string>
     <string name="btnLogin">Iniciar Sesion</string>
+    <string name="hintUser">Usuario</string>
+    <string name="hintPass">Contraseña</string>
 
 </resources>
