@@ -11,6 +11,7 @@ public interface ILogin {
         public void setMessageError(String error, int errcCode);
     }
     interface Presenter{
+
         public void validateCredentials(String user,String pass);
     }
 }

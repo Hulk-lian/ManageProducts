@@ -38,7 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tilPassword"
-        app:errorTextAppearance="@color/errores"
+        app:errorTextAppearance="@color/error"
         android:layout_below="@id/tilUser"
         app:counterEnabled="true"
         app:errorEnabled="true"
@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/hintPass"
             android:inputType="textPassword"
-            android:id="@+id/et_passwd"
+            android:id="@+id/edtPass"
             android:maxLength="20"
             />
 
@@ -61,7 +61,7 @@
         android:text="@string/cbText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/cb_remeber"
+        android:id="@+id/cbRemeber"
         android:layout_below="@id/tilPassword"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
@@ -73,8 +73,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/cb_remeber"
-        android:id="@+id/bt_login"/>
+        android:layout_below="@+id/cbRemeber"
+        android:id="@+id/btLogin"/>
 
 
 </RelativeLayout>

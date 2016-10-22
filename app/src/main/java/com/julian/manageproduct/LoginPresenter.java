@@ -24,33 +24,34 @@ public class LoginPresenter implements ILogin.Presenter {
 
             if(!pass.isEmpty())//if the password is Empty
 
-                if (pass.length()<8) //if the lenght of the password has 8 or less
+                if (!(pass.length() <8)) //if the lenght of the password has 8 or less
 
                     if (pass.matches( patronpassMayus)) //if contains uppercase
 
                         if (pass.matches(patronpassNum)) { //if contains digit all ok
 
                             mensRes = ((Context)msgView).getResources().getString(R.string.loginOk); //all ok
+                            errCode=0;
                         }
                         else { //No tiene digitos
                             mensRes = ((Context) msgView).getResources().getString(R.string.passDigit);
-                           // errCode= R.id.et_passwd;
+                            errCode= R.id.edtPass;
                         }
                     else { //No tiene mayuscula
                         mensRes = ((Context) msgView).getResources().getString(R.string.passCase);
-                        //errCode= R.id.et_passwd;
+                        errCode= R.id.edtPass;
                     }
                 else { //No tiene Minimo 8
                     mensRes = ((Context) msgView).getResources().getString(R.string.passMinLength);
-                   // errCode = R.id.et_passwd;
+                    errCode = R.id.edtPass;
                 }
             else{
                 mensRes = ((Context)msgView).getResources().getString(R.string.dataEmpty);
-               // errCode = R.id.et_passwd;
+                errCode = R.id.edtPass;
             }
         else {
             mensRes = ((Context) msgView).getResources().getString(R.string.dataEmpty);
-           // errCode = R.id.et_user;
+           errCode = R.id.edtUser;
         }
 
         msgView.setMessageError(mensRes,errCode);
