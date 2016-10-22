@@ -57,7 +57,6 @@ public class ListProduct_Activity extends ListActivity {
         //CASO 2: AdapterC personalizado
          adapter= new ProductAdapterC(this);
 
-
         getListView().setAdapter(adapter);
     }
 
@@ -65,8 +64,7 @@ public class ListProduct_Activity extends ListActivity {
     public void clickAdd(View view) {
 
         Intent i = new Intent(this, AddProduct_Activity.class);
-        // Iniciamos la segunda actividad, y le indicamos que la iniciamos
-        // para rellenar el nombre:
+
         startActivity(i);
     }
 }

@@ -29,13 +29,11 @@
 
     <EditText
         android:id="@+id/edtName"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/NameES"
         android:layout_below="@+id/txvTitulo"
-        android:layout_toRightOf="@+id/imgVImage"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_toRightOf="@+id/imgVImage"/>
 
     <!--descripcion -->
 
@@ -47,8 +45,6 @@
         android:maxLines="10"
         android:layout_below="@+id/edtName"
         android:layout_toRightOf="@+id/imgVImage"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
         />
 
     <!--Dosis -->
@@ -70,9 +66,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/btnSave"
         android:onClick="clickbtn"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_below="@id/edtStock"/>
 
     <EditText
         android:id="@+id/edtDosage"
@@ -81,8 +75,6 @@
         android:hint="@string/DosageES"
         android:inputType="number"
         android:layout_below="@+id/imgVImage"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:layout_alignRight="@+id/txvTitulo"
         android:layout_alignEnd="@+id/txvTitulo" />
 
@@ -91,8 +83,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/spnUnitDosage"
         android:layout_alignBottom="@+id/edtDosage"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
         android:layout_toRightOf="@+id/edtDosage"
         android:layout_toEndOf="@+id/edtDosage" />
 
@@ -102,8 +92,6 @@
         android:layout_height="wrap_content"
         android:hint="@string/BrandES"
         android:layout_below="@+id/edtDosage"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:layout_alignEnd="@id/edtDosage"
         android:layout_alignRight="@id/edtDosage" />
 
@@ -114,8 +102,6 @@
         android:hint="@string/PriceES"
         android:inputType="numberDecimal"
         android:layout_below="@+id/edtBrand"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:layout_toLeftOf="@+id/edtStock"
         android:layout_toStartOf="@+id/edtStock" />
 
