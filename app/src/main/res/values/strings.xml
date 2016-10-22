@@ -11,10 +11,19 @@
     <string name="btnSaveES">Guardar</string>
     <string name="searchES">Buscar</string>
     <string name="AddProduct">Nuevo Producto</string>
+    <string name="SpinnerES">Selecciona uno</string>
 
     <string-array name="listUnit">
         <item>mg</item>
         <item>g</item>
         <item>ml</item>
     </string-array>
+
+    <string name="loginOk">Autentificación correcta</string>
+    <string name="passCase">La clave debe de contener al menos una letra mayuscula</string>
+    <string name="passDigit">La clave debe de contener al menos un numero</string>
+    <string name="passMinLength">La clave debe de contener al menos 8 caracteres</string>
+    <string name="cbText">Recordar</string>
+    <string name="btnLogin">Iniciar Sesion</string>
+
 </resources>

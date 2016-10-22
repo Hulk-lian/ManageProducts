@@ -18,46 +18,40 @@
         android:layout_marginBottom="10dp"
         android:id="@+id/txvTitulo" />
 
+    <ImageView
+        android:id="@+id/imgVImage"
+        android:src="@drawable/pill"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:clickable="true"
+        android:onClick="clickImg"
+        android:layout_below="@+id/txvTitulo" />
+
     <EditText
         android:id="@+id/edtName"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/NameES"
-        android:layout_below="@id/txvTitulo"/>
+        android:layout_below="@+id/txvTitulo"
+        android:layout_toRightOf="@+id/imgVImage"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <!--descripcion -->
 
     <EditText
         android:id="@+id/edtDescrip"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/DescripES"
+        android:maxLines="10"
         android:layout_below="@+id/edtName"
-        android:maxLines="10"/>
+        android:layout_toRightOf="@+id/imgVImage"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        />
 
-    <EditText
-        android:id="@+id/edtBrand"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/BrandES"
-        android:layout_below="@+id/edtDosage"/>
-
-    <EditText
-        android:id="@+id/edtPrice"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/PriceES"
-        android:inputType="numberDecimal"
-        android:layout_below="@+id/edtBrand"
-        android:layout_toLeftOf="@+id/edtStock"
-        android:layout_toStartOf="@+id/edtStock" />
-
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/spnUnitDosage"
-        android:layout_above="@+id/edtBrand"
-        android:layout_below="@+id/edtDescrip"
-        android:layout_toRightOf="@+id/edtDosage"
-        android:layout_toEndOf="@+id/edtDosage" />
+    <!--Dosis -->
 
     <EditText
         android:id="@+id/edtStock"
@@ -67,7 +61,7 @@
         android:inputType="numberDecimal"
         android:layout_alignBaseline="@+id/edtPrice"
         android:layout_alignBottom="@+id/edtPrice"
-        android:layout_toRightOf="@+id/edtDosage"
+        android:layout_toRightOf="@+id/edtPrice"
         android:layout_toEndOf="@+id/edtDosage"/>
 
     <Button
@@ -75,22 +69,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/btnSave"
-        android:layout_alignBottom="@+id/imgVImage"
+        android:onClick="clickbtn"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:onClick="clickbtn"/>
-
-    <ImageView
-        android:id="@+id/imgVImage"
-        android:src="@drawable/pill"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_below="@+id/edtPrice"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:clickable="true"
-        android:onClick="clickImg"
-        />
+        android:layout_alignParentEnd="true" />
 
     <EditText
         android:id="@+id/edtDosage"
@@ -98,11 +80,44 @@
         android:layout_height="wrap_content"
         android:hint="@string/DosageES"
         android:inputType="number"
-        android:layout_below="@+id/edtDescrip"
+        android:layout_below="@+id/imgVImage"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/imgVImage"
-        android:layout_alignEnd="@+id/imgVImage" />
+        android:layout_alignRight="@+id/txvTitulo"
+        android:layout_alignEnd="@+id/txvTitulo" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spnUnitDosage"
+        android:layout_alignBottom="@+id/edtDosage"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/edtDosage"
+        android:layout_toEndOf="@+id/edtDosage" />
+
+    <EditText
+        android:id="@+id/edtBrand"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/BrandES"
+        android:layout_below="@+id/edtDosage"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@id/edtDosage"
+        android:layout_alignRight="@id/edtDosage" />
+
+    <EditText
+        android:id="@+id/edtPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/PriceES"
+        android:inputType="numberDecimal"
+        android:layout_below="@+id/edtBrand"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/edtStock"
+        android:layout_toStartOf="@+id/edtStock" />
 
 
 </RelativeLayout>
