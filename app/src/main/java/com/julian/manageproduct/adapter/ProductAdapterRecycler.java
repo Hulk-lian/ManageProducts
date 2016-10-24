@@ -4,12 +4,14 @@ package com.julian.manageproduct.adapter;
 import android.content.Context;
 import android.speech.RecognizerIntent;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.julian.manageproduct.Product_Aplication;
+import com.julian.manageproduct.R;
 import com.julian.manageproduct.model.Product;
 
 import java.util.ArrayList;
@@ -34,14 +36,18 @@ public class ProductAdapterRecycler extends RecyclerView.Adapter<ProductAdapterR
 
     @Override
     public ProductViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        // el false es para que mantenga el xml como esta no crea un nuevo padre lo añade
+        View item = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_product,parent,false);
 
-
-        return null;
+        return new ProductViewHolder(item);
     }
 
     @Override
     public void onBindViewHolder(ProductViewHolder holder, int position) {
-
+        holder.imgProd.setImageResource(products.get(position).getmImage());
+        holder.txvNameCA.setText(products.get(position).getmName());
+        holder.txvStockCA.setText(products.get(position).getFormatedStock());
+        holder.txvPriceCA.setText(products.get(position).getFormatedPrice());
     }
 
     @Override

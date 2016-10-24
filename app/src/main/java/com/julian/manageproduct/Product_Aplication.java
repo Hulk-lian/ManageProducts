@@ -6,6 +6,8 @@ import android.app.Application;
 import com.julian.manageproduct.model.Product;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class Product_Aplication extends Application {
@@ -63,6 +65,7 @@ public class Product_Aplication extends Application {
     }
 
     public List<Product> getProducts(){
+        Collections.sort(products);
         return  products;
     }
 }

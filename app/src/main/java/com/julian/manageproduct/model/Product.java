@@ -2,7 +2,7 @@ package com.julian.manageproduct.model;
 
 import java.util.Locale;
 
-public class Product {
+public class Product implements Comparable<Product>{
     private int mId;
     private String mName;
     private String mDescription;
@@ -128,5 +128,15 @@ public class Product {
         result = 31 * result + mDosage.hashCode();
         result = 31 * result + mBrand.hashCode();
         return result;
+    }
+
+    @Override
+    public int compareTo(Product product) {
+        if(this.getmName().compareTo(product.getmName())==0){
+            return this.getmBrand().compareTo(product.getmBrand());
+        }
+        else{
+            return this.getmName().compareTo(product.getmName());
+        }
     }
 }

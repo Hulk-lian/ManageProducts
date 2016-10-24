@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ManageProduct</string>
+    <string name="app_name">Recycler Product</string>
     <string name="NameES">Nombre</string>
     <string name="DescripES">Descripcion</string>
     <string name="DosageES">Dosis</string>
