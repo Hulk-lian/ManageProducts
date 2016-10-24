@@ -10,8 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.julian.manageproduct.R;
-
 public class Login_Activity extends AppCompatActivity implements ILogin.msgView{
 
     private ILogin.Presenter mLoginP;
@@ -41,7 +39,7 @@ public class Login_Activity extends AppCompatActivity implements ILogin.msgView{
         });
     }
         private void logeo(){
-            Intent intent = new Intent(this, ListProduct_Activity.class);
+            Intent intent = new Intent(this, Product_Activity.class);
             startActivity(intent);
             finish();
 
