@@ -65,7 +65,13 @@ public class Product_Aplication extends Application {
     }
 
     public List<Product> getProducts(){
-        Collections.sort(products);
+        Collections.sort(products, (p1, p2) -> p1.getmStock() - p2.getmStock());
         return  products;
+        //se ha de añadir al apartado del gradle app
+        //jackOptions {
+          //  enabled true
+        //}
     }
+
+
 }

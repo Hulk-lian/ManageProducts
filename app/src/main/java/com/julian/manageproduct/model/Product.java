@@ -1,5 +1,6 @@
 package com.julian.manageproduct.model;
 
+import java.util.Comparator;
 import java.util.Locale;
 
 public class Product implements Comparable<Product>{
@@ -11,6 +12,21 @@ public class Product implements Comparable<Product>{
     private double mPrice;
     private int mStock;
     private int mImage;
+
+    public static final Comparator<Product> PRICE_COMPARATOR= new Comparator<Product>() {
+        @Override
+        public int compare(Product p1, Product p2) {
+
+            return Double.compare(p2.getmPrice(),p1.getmPrice());
+        }
+    };
+
+    public static final Comparator<Product> STOCK_COMPARATOR=new Comparator<Product>() {
+        @Override
+        public int compare(Product p1, Product p2) {
+            return p1.getmStock()-p2.getmStock();
+        }
+    };
 
     public Product(String mName, String mDescription,String mDosage, String mBrand, double mPrice, int mStock, int mImage) {
         this.mName = mName;
@@ -132,6 +148,7 @@ public class Product implements Comparable<Product>{
 
     @Override
     public int compareTo(Product product) {
+
         if(this.getmName().compareTo(product.getmName())==0){
             return this.getmBrand().compareTo(product.getmBrand());
         }

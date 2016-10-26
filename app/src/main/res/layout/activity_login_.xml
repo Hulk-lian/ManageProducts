@@ -74,7 +74,8 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/cbRemeber"
-        android:id="@+id/btLogin"/>
+        android:id="@+id/btLogin"
+        android:background="@drawable/sel_btn_login"/>
 
 
 </RelativeLayout>
