@@ -79,7 +79,9 @@
         android:hint="@string/BrandES"
         android:layout_below="@+id/edtStock"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/edtPrice"
+        android:layout_toStartOf="@+id/edtPrice" />
 
     <Spinner
         android:layout_width="match_parent"
@@ -101,6 +103,16 @@
         android:layout_marginLeft="21dp"
         android:layout_marginStart="21dp" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/edtBrand"
+        android:gravity="center_horizontal"
+        >
+        <include layout="@layout/btn_ok"/>
+
+    </LinearLayout>
+<!--
     <Button
         android:text="@string/btnSaveES"
         android:layout_width="wrap_content"
@@ -111,6 +123,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="21dp" />
-
+-->
 
 </RelativeLayout>

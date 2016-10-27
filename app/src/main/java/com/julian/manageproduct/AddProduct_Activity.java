@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
@@ -14,14 +13,14 @@ public class AddProduct_Activity extends AppCompatActivity {
    // ArrayAdapter<CharSequence> arrayAdapter=ArrayAdapter.createFromResource(this,R.array.listUnit,android.R.layout.simple_spinner_item);
 
     private Spinner spOptions;
-    private Button btnSave;
+   // private Button btnSave;
     private EditText edtName,edtDescription,edtDosage,edtBrand,edtPrice,edtStock;
     private String imgUrl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_product_);
+        setContentView(R.layout.activity_manage_product_);
 
         // metodo para enlazar las variables con los componentes que tenemos en el XML
         inicialize();
@@ -29,7 +28,7 @@ public class AddProduct_Activity extends AppCompatActivity {
 
     private void inicialize() {
         spOptions=(Spinner)findViewById(R.id.spnUnitDosage);
-        btnSave=(Button)findViewById(R.id.btnSave);
+       // btnSave=(Button)findViewById(R.id.btnSave);
         edtName=(EditText)findViewById(R.id.edtName);
         edtDescription=(EditText)findViewById(R.id.edtDescrip);
         edtDosage=(EditText)findViewById(R.id.edtDosage);

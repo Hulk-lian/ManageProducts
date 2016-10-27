@@ -29,4 +29,10 @@
     <string name="hintUser">Usuario</string>
     <string name="hintPass">Contraseña</string>
 
+    <!--menu -->
+    <string name="action_add_product">Añadir un Producto</string>
+    <string name="action_sort_alphabetically">Ordenar alfabeticamente</string>
+    <string name="action_settiong_general">ajustes generales</string>
+    <string name="action_setting_account">ajustes de cuenta</string>
+
 </resources>

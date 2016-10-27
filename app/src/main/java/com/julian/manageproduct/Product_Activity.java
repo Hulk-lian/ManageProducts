@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -15,6 +17,9 @@ public class Product_Activity extends AppCompatActivity {
     private ProductAdapterRecycler adapterRecycler;
     private RecyclerView rcvProduct;
    private Button btnAdd;
+
+    private static final int ADD_PRODUCT=0;
+    private static final int EDIT_PRODUCT=1;
 
 
     @Override
@@ -30,6 +35,64 @@ public class Product_Activity extends AppCompatActivity {
         rcvProduct.setHasFixedSize(true);
         rcvProduct.setAdapter(adapterRecycler);
     }
+    /*
+    Metodo que infla em menu en la activity
+    */
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_product_activity,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+/*
+    devuelve true si se ha realizado una operacion y no se quiere que se propague a una clase que hay por arriba
+    flase cuado no se ha consumido el evento.
+ */
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+
+            case R.id.action_add_product:
+                Intent intent =new Intent(Product_Activity.this,AddProduct_Activity.class);
+                startActivityForResult(intent,ADD_PRODUCT);
+                break;
+
+            case R.id.action_action_order_alphabetical:
+
+                break;
+
+            case R.id.action_setting_general:
+
+                break;
+
+            case R.id.action_setting_account:
+
+                break;
+        }
+        return  super.onOptionsItemSelected(item);
+    }
+
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (requestCode) {
+
+            case ADD_PRODUCT:
+
+                //añadir el producto
+
+                break;
+
+            case EDIT_PRODUCT:
+
+
+                break;
+        }
+
+    }
+
 
 
     public void clickAdd(View view) {
