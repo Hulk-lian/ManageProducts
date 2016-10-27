@@ -29,6 +29,7 @@
             android:ems="10"
             android:id="@+id/edtUser"
             android:maxLength="20"
+            android:text="usuario"
             />
 
     </android.support.design.widget.TextInputLayout>
@@ -52,6 +53,7 @@
             android:inputType="textPassword"
             android:id="@+id/edtPass"
             android:maxLength="20"
+            android:text="1234567Aa"
             />
 
     </android.support.design.widget.TextInputLayout>

@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-public class AddProduct_Activity extends AppCompatActivity {
+public class ManageProduct_Activity extends AppCompatActivity {
 
     //array adpter for the spinner
    // ArrayAdapter<CharSequence> arrayAdapter=ArrayAdapter.createFromResource(this,R.array.listUnit,android.R.layout.simple_spinner_item);

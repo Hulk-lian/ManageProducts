@@ -65,12 +65,35 @@ public class Product_Aplication extends Application {
     }
 
     public List<Product> getProducts(){
+
         Collections.sort(products, (p1, p2) -> p1.getmStock() - p2.getmStock());
+
         return  products;
         //se ha de añadir al apartado del gradle app
         //jackOptions {
           //  enabled true
         //}
+    }
+
+    public List<Product> getSortedAphabetical(boolean sortedAZ){
+
+//ordenar de manera alfabetica
+        if(sortedAZ)
+            Collections.sort(products, (p1, p2) -> );
+        else
+            Collections.sort(products, (p2, p1) -> p1.getmStock() - p2.getmStock());
+
+        return products;
+    }
+
+    public List<Product> getSortedProducts(boolean sorted){
+
+        if(sorted)
+            Collections.sort(products, (p1, p2) -> p1.getmStock() - p2.getmStock());
+        else
+            Collections.sort(products, (p2, p1) -> p1.getmStock() - p2.getmStock());
+
+        return products;
     }
 
 

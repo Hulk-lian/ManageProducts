@@ -16,7 +16,7 @@ public class Product_Activity extends AppCompatActivity {
 
     private ProductAdapterRecycler adapterRecycler;
     private RecyclerView rcvProduct;
-   private Button btnAdd;
+    private Button btnAdd;
 
     private static final int ADD_PRODUCT=0;
     private static final int EDIT_PRODUCT=1;
@@ -54,11 +54,13 @@ public class Product_Activity extends AppCompatActivity {
         switch (item.getItemId()) {
 
             case R.id.action_add_product:
-                Intent intent =new Intent(Product_Activity.this,AddProduct_Activity.class);
+                Intent intent =new Intent(Product_Activity.this,ManageProduct_Activity.class);
                 startActivityForResult(intent,ADD_PRODUCT);
                 break;
 
             case R.id.action_action_order_alphabetical:
+                //dao
+                    adapterRecycler.getAllSortedProducts();
 
                 break;
 
@@ -97,7 +99,7 @@ public class Product_Activity extends AppCompatActivity {
 
     public void clickAdd(View view) {
 
-        Intent i = new Intent(this, AddProduct_Activity.class);
+        Intent i = new Intent(this, ManageProduct_Activity.class);
 
         startActivity(i);
     }

@@ -23,14 +23,19 @@ gestiona una coleccion de viewHolder
 
 el recycler view no tiene ninguna copia interna
 * */
+
 public class ProductAdapterRecycler extends RecyclerView.Adapter<ProductAdapterRecycler.ProductViewHolder>{
 
     private List<Product> products;
     private  Context context;
+    boolean orderAZ=true;
 
     public ProductAdapterRecycler(Context context) {
+
         this.context=context;
-        products=((Product_Aplication) context.getApplicationContext()).getProducts();
+
+        products= new ArrayList<Product>(((Product_Aplication) context.getApplicationContext()).getProducts());
+       // products=((Product_Aplication) context.getApplicationContext()).getProducts();
 
     }
 
@@ -77,4 +82,19 @@ public class ProductAdapterRecycler extends RecyclerView.Adapter<ProductAdapterR
         }
 
     }
+
+    public void getAllProdcts(List<Product> productList){
+        products.clear();//limpia
+        products.addAll(productList);//añade todos los elementos
+        notifyDataSetChanged();//notifica a todas las vistas cuyo adapter sea esa lista Patron observable-observador
+    }
+
+
+    public void getAllSortedProducts(){
+        orderAZ=!orderAZ;
+        products.clear();
+        products.addAll(((Product_Aplication) context.getApplicationContext()).getSortedProducts(orderAZ));
+        notifyDataSetChanged();
+    }
+
 }
