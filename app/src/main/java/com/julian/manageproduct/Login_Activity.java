@@ -1,6 +1,7 @@
 package com.julian.manageproduct;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -30,6 +31,8 @@ public class Login_Activity extends AppCompatActivity implements ILogin.msgView{
         mTilPass = (TextInputLayout) findViewById(R.id.tilPassword);
         mBtnLogin = (Button) findViewById(R.id.btLogin);
 
+        Typeface font=Typeface.createFromAsset(getAssets(),"font_too_beautiful.ttf");//hay que poner el enlace del recurso de la fuente
+        mBtnLogin.setTypeface(font);
 
         mBtnLogin.setOnClickListener(new View.OnClickListener() {
             @Override

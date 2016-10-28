@@ -12,8 +12,8 @@ public class ManageProduct_Activity extends AppCompatActivity {
     //array adpter for the spinner
    // ArrayAdapter<CharSequence> arrayAdapter=ArrayAdapter.createFromResource(this,R.array.listUnit,android.R.layout.simple_spinner_item);
 
+    // private Button btnSave;
     private Spinner spOptions;
-   // private Button btnSave;
     private EditText edtName,edtDescription,edtDosage,edtBrand,edtPrice,edtStock;
     private String imgUrl;
 
@@ -35,7 +35,6 @@ public class ManageProduct_Activity extends AppCompatActivity {
         edtBrand=(EditText)findViewById(R.id.edtBrand);
         edtPrice=(EditText)findViewById(R.id.edtPrice);
         edtStock=(EditText)findViewById(R.id.edtStock);
-
 
         //*----------------------------------*//
         // arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

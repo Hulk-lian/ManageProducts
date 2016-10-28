@@ -79,9 +79,9 @@ public class Product_Aplication extends Application {
 
 //ordenar de manera alfabetica
         if(sortedAZ)
-            Collections.sort(products, (p1, p2) -> );
+            Collections.sort(products, (p1, p2) -> p1.getmName().compareTo(p2.getmName()));
         else
-            Collections.sort(products, (p2, p1) -> p1.getmStock() - p2.getmStock());
+           Collections.sort(products, (p2, p1) -> p1.getmName().compareTo(p2.getmName()));
 
         return products;
     }

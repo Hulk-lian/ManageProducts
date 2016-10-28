@@ -97,4 +97,11 @@ public class ProductAdapterRecycler extends RecyclerView.Adapter<ProductAdapterR
         notifyDataSetChanged();
     }
 
+    public void getAlphSortedProducts(){
+        orderAZ=!orderAZ;
+        products.clear();
+        products.addAll(((Product_Aplication) context.getApplicationContext()).getSortedAphabetical(orderAZ));
+        notifyDataSetChanged();
+    }
+
 }

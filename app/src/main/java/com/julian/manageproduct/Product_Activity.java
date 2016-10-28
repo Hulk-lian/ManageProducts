@@ -16,7 +16,6 @@ public class Product_Activity extends AppCompatActivity {
 
     private ProductAdapterRecycler adapterRecycler;
     private RecyclerView rcvProduct;
-    private Button btnAdd;
 
     private static final int ADD_PRODUCT=0;
     private static final int EDIT_PRODUCT=1;
@@ -26,8 +25,6 @@ public class Product_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product);
-
-        btnAdd=(Button)findViewById(R.id.btnAdd);
 
         adapterRecycler= new ProductAdapterRecycler(this);
         rcvProduct=(RecyclerView)findViewById(R.id.rcvRecycler);
@@ -60,7 +57,8 @@ public class Product_Activity extends AppCompatActivity {
 
             case R.id.action_action_order_alphabetical:
                 //dao
-                    adapterRecycler.getAllSortedProducts();
+
+                    adapterRecycler.getAlphSortedProducts();
 
                 break;
 
@@ -93,14 +91,5 @@ public class Product_Activity extends AppCompatActivity {
                 break;
         }
 
-    }
-
-
-
-    public void clickAdd(View view) {
-
-        Intent i = new Intent(this, ManageProduct_Activity.class);
-
-        startActivity(i);
     }
 }
