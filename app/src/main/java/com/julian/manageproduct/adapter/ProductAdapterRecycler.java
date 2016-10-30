@@ -28,20 +28,19 @@ public class ProductAdapterRecycler extends RecyclerView.Adapter<ProductAdapterR
 
     private List<Product> products;
     private  Context context;
-    boolean orderAZ=true;
+    boolean sorted=true;
 
     public ProductAdapterRecycler(Context context) {
 
         this.context=context;
-
-        products= new ArrayList<Product>(((Product_Aplication) context.getApplicationContext()).getProducts());
+                                                //dao
+        products= new ArrayList<Product>(((Product_Aplication) context.getApplicationContext()).getProducts());//es una copia de la lista de elementos de la base de datos.
        // products=((Product_Aplication) context.getApplicationContext()).getProducts();
-
     }
 
     @Override
     public ProductViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        // el false es para que mantenga el xml como esta no crea un nuevo padre lo añade
+        // el false es para que mantenga el xml como esta no crea un nuevo padre, lo añade
         View item = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_product,parent,false);
 
         return new ProductViewHolder(item);
@@ -60,8 +59,16 @@ public class ProductAdapterRecycler extends RecyclerView.Adapter<ProductAdapterR
         return products.size();
     }
 
+
+    //bug
+    public void addProducto(Product p) {
+       ((Product_Aplication)context.getApplicationContext()).addProduct(p);
+        products.add(p);
+        notifyDataSetChanged();
+    }
+
     /*
-     se pone static para evitar que se creen demasiados objetos no ocupe tanta memoria y solo tengamos un objeto de ProductViewHolder
+     se pone static para evitar que se creen demasiados objetos, no ocupen tanta memoria y solo tengamos un objeto de ProductViewHolder
      */
 
     public static class ProductViewHolder extends RecyclerView.ViewHolder{
@@ -89,18 +96,17 @@ public class ProductAdapterRecycler extends RecyclerView.Adapter<ProductAdapterR
         notifyDataSetChanged();//notifica a todas las vistas cuyo adapter sea esa lista Patron observable-observador
     }
 
-
     public void getAllSortedProducts(){
-        orderAZ=!orderAZ;
+        sorted=!sorted;
         products.clear();
-        products.addAll(((Product_Aplication) context.getApplicationContext()).getSortedProducts(orderAZ));
+        products.addAll(((Product_Aplication) context.getApplicationContext()).getSortedProducts(sorted));
         notifyDataSetChanged();
     }
 
     public void getAlphSortedProducts(){
-        orderAZ=!orderAZ;
+        sorted=!sorted;
         products.clear();
-        products.addAll(((Product_Aplication) context.getApplicationContext()).getSortedAphabetical(orderAZ));
+        products.addAll(((Product_Aplication) context.getApplicationContext()).getSortedAphabetical(sorted));
         notifyDataSetChanged();
     }
 

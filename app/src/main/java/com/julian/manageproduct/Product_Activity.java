@@ -9,8 +9,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.julian.manageproduct.adapter.ProductAdapterRecycler;
+import com.julian.manageproduct.model.Product;
 
 public class Product_Activity extends AppCompatActivity {
 
@@ -57,7 +59,6 @@ public class Product_Activity extends AppCompatActivity {
 
             case R.id.action_action_order_alphabetical:
                 //dao
-
                     adapterRecycler.getAlphSortedProducts();
 
                 break;
@@ -77,19 +78,42 @@ public class Product_Activity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        switch (requestCode) {
 
-            case ADD_PRODUCT:
+        Bundle b;
+        Product p;
+        if(resultCode!=RESULT_CANCELED) {
 
-                //añadir el producto
+            switch (requestCode) {
 
-                break;
+                case ADD_PRODUCT:
 
-            case EDIT_PRODUCT:
+                    //añadir el producto
+
+                    //recoger los datos
+                    b=data.getExtras().getBundle("data");
+                    //b= getIntent().getBundleExtra("data");
+                    //get data product
+                    p = new Product(b.getString("Name"),
+                        b.getString("Description"),
+                        b.getString("Brand"),
+                        b.getString("Dosage"),
+                        b.getDouble("Price",0.0),
+                        b.getInt("Img",0),
+                        b.getInt("Stock",0));
+
+                    //add product
+                   adapterRecycler.addProducto(p);
+
+                    break;
+
+                case EDIT_PRODUCT:
 
 
-                break;
+                    break;
+            }
         }
+        else
+            Toast.makeText(this, "Resultado cancelado", Toast.LENGTH_LONG).show();
 
     }
 }
