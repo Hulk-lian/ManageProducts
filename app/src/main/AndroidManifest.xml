@@ -25,6 +25,8 @@
         <activity android:name=".Product_Activity" />
 
         <activity android:name=".ManageProduct_Activity" />
+        <activity android:name=".setting.GeneralSettingActivity" />
+        <activity android:name=".setting.AccountSettingActivity" />
 
     </application>
 </manifest>

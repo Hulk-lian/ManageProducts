@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pre_account">Configuracion de cuenta</string>
+    <string name="pref_user_title">Usuario</string>
+    <string name="pref_remember_title">Recordar</string>
+    <string name="pre_user_summary">Nombre de usuario</string>
+    <string name="pref_pass_title">Contraseña</string>
+    <string name="pre_pass_summary">Contraseña del usuario en la aplicación</string>
+
+    <string name="pre_gen">Configuracion de cuenta</string>
+    <string name="pref_showimg_title">Mostrar imagenes</string>
+    <string name="pref_showimg_summary">Mostar las imagenes en los listados</string>
+    <string name="pref_numcolumn_title">Numero de colmnas</string>
+    <string name="pref_numcolumn_summary">Indicar el numero de columnas que se visualiza</string>
+
+    <string-array name="pref_numcolumn_entries">
+        <item>1 columnas</item>
+        <item>2 columnas</item>
+        <item>3 columnas</item>
+        <item>4 columnas</item>
+    </string-array>
+
+
+    <string-array name="pref_numcolumn_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+</resources>
