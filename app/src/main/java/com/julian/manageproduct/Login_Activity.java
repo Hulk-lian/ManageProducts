@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.julian.manageproduct.R;
@@ -19,6 +20,7 @@ public class Login_Activity extends AppCompatActivity implements ILogin.msgView{
     private TextInputLayout mTilPass, mTilUser;
     private Button mBtnLogin;
     private final String TAG ="manageProduct";
+    private TextView medtReg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,7 @@ public class Login_Activity extends AppCompatActivity implements ILogin.msgView{
         mTilUser = (TextInputLayout) findViewById(R.id.tilUser);
         mTilPass = (TextInputLayout) findViewById(R.id.tilPassword);
         mBtnLogin = (Button) findViewById(R.id.btLogin);
+        medtReg = (TextView)findViewById(R.id.txvForget);
 
 
         mBtnLogin.setOnClickListener(new View.OnClickListener() {
@@ -68,5 +71,11 @@ public class Login_Activity extends AppCompatActivity implements ILogin.msgView{
                 logeo();
                 break;
         }
+    }
+
+    public void clickTXV(View view) {
+        Intent i = new Intent(this,RegisterUser.class);
+        startActivity(i);
+
     }
 }

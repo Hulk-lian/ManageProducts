@@ -76,5 +76,15 @@
         android:layout_below="@+id/cbRemeber"
         android:id="@+id/btLogin"/>
 
+    <TextView
+        android:text="@string/forgetUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/txvForget"
+        android:onClick="clickTXV"/>
+
 
 </RelativeLayout>

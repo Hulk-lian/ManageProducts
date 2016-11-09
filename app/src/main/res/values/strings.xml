@@ -28,5 +28,7 @@
     <string name="btnLogin">Iniciar Sesion</string>
     <string name="hintUser">Usuario</string>
     <string name="hintPass">Contraseña</string>
+    <string name="forgetUser">Registrarse</string>
+    <string name="conditions">Acepto las condiciones</string>
 
 </resources>
