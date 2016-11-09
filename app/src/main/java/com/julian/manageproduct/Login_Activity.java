@@ -11,8 +11,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.julian.manageproduct.R;
-
 public class Login_Activity extends AppCompatActivity implements ILogin.msgView{
 
     private ILogin.Presenter mLoginP;
@@ -74,7 +72,7 @@ public class Login_Activity extends AppCompatActivity implements ILogin.msgView{
     }
 
     public void clickTXV(View view) {
-        Intent i = new Intent(this,RegisterUser.class);
+        Intent i = new Intent(this,SignUp.class);
         startActivity(i);
 
     }

@@ -30,5 +30,6 @@
     <string name="hintPass">Contraseña</string>
     <string name="forgetUser">Registrarse</string>
     <string name="conditions">Acepto las condiciones</string>
+    <string name="ok">OK</string>
 
 </resources>
