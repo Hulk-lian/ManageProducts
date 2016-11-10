@@ -1,8 +1,12 @@
 package com.julian.manageproduct;
 
+import android.content.SharedPreferences;
+import android.content.res.Resources;
+import android.content.res.TypedArray;
 import android.support.annotation.ArrayRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -12,6 +16,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.lang.reflect.Array;
 
@@ -43,7 +48,9 @@ public class SignUp extends AppCompatActivity {
         spLoca=(Spinner)findViewById(R.id.spLocalidad);
         spProv=(Spinner)findViewById(R.id.spProvin);
 
+
         rdgType=(RadioGroup)findViewById(R.id.rdgType);
+
 
         //rdbEmpr=(RadioButton)findViewById(R.id.rdbEmpresa);
         //rdbUser=(RadioButton)findViewById(R.id.rdbParticular);
@@ -70,7 +77,25 @@ public class SignUp extends AppCompatActivity {
 
     //click del boton
     public void signUp(View view){
+       switch (validate()){
+           case 1:
+               Toast.makeText(getApplicationContext(),"Email formato incorrecto",Toast.LENGTH_LONG).show();
+               break;
+           case 2:
+               Toast.makeText(getApplicationContext(),"Nombre vacío",Toast.LENGTH_LONG).show();
+               break;
+           case 3:
+               Toast.makeText(getApplicationContext(),"Pass vacio",Toast.LENGTH_LONG).show();
+               break;
+           case 0:
+               Toast.makeText(getApplicationContext(),"Correct",Toast.LENGTH_LONG).show();
+               addtheUser();
+               break;
+       }
 
+    }
+
+    private void addtheUser(){
 
     }
 
@@ -80,13 +105,14 @@ public class SignUp extends AppCompatActivity {
         ArrayAdapter<CharSequence> adapter= ArrayAdapter.createFromResource(this,R.array.provincias,android.R.layout.simple_spinner_item);
 
         adapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+
         spProv.setAdapter(adapter);
 
         spinerListener= new AdapterView.OnItemSelectedListener() {
 
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                switch (view.getId()){
+                switch (adapterView.getId()){
                     case R.id.spProvin:
                         loadFromProv(i);
                         break;
@@ -102,15 +128,36 @@ public class SignUp extends AppCompatActivity {
 
             }
         };
+        this.spProv.setOnItemSelectedListener(spinerListener);
+        this.spLoca.setOnItemSelectedListener(spinerListener);
 
     }
 
     private void loadFromProv(int pos){
-        ArrayAdapter<CharSequence> adapter= ArrayAdapter.createFromResource();
+
+        TypedArray res=getResources().obtainTypedArray(R.array.array_provincia_a_localidades);
+
+        ArrayAdapter<CharSequence> adapter= ArrayAdapter.createFromResource(this,res.getResourceId(pos,0),android.R.layout.simple_spinner_item);
 
         adapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
 
         spLoca.setAdapter(adapter);
+
+    }
+
+    public int validate(){
+
+        int res=0;
+        if(!Patterns.EMAIL_ADDRESS.matcher(edtEmail.getText().toString()).matches()){
+            res=1;
+        }
+        else if(edtUser.getText().toString().trim()==""){
+            res=2;
+        }
+        else if(edtPass.getText().toString().trim()=="")
+            res=3;
+
+        return res;
     }
 
 
