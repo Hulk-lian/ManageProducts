@@ -1,6 +1,6 @@
 package com.julian.manageproduct;
 
-public interface ILogin {
+public interface IValidateUser {
 
     int PASSWORD_DIGIT=1;
     int PASSWORD_CASE = 2;
@@ -12,6 +12,7 @@ public interface ILogin {
     }
     interface Presenter{
 
-        public void validateCredentials(String user,String pass);
+        boolean validateCredentialsUser(String user);
+        boolean validateCredentialsPass(String pass);
     }
 }

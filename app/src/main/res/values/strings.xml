@@ -31,5 +31,9 @@
     <string name="forgetUser">Registrarse</string>
     <string name="conditions">Acepto las condiciones</string>
     <string name="ok">OK</string>
+    <!-- % seguido de un numero es el argumento y el $ indica el tipo 's' es de tipo String
+    es un patron de contruccion
+    -->
+    <string name="message_city">Ha seleccionado %1$s (%2$s)</string>
 
 </resources>

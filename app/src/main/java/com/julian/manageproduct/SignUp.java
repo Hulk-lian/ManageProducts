@@ -1,9 +1,6 @@
 package com.julian.manageproduct;
 
-import android.content.SharedPreferences;
-import android.content.res.Resources;
 import android.content.res.TypedArray;
-import android.support.annotation.ArrayRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Patterns;
@@ -13,49 +10,42 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import java.lang.reflect.Array;
-
 public class SignUp extends AppCompatActivity {
-
 
     EditText edtUser,edtPass,edtEmail,edtEmpName;
     Spinner spProv,spLoca;
-    RadioGroup rdgType;
-   // RadioButton rdbUser,rdbEmpr;
+    RadioGroup rdgType; // RadioButton rdbUser,rdbEmpr;
     Button btnok;
     CheckBox chbCondition;
 
     private AdapterView.OnItemSelectedListener spinerListener;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-        edtUser=(EditText)findViewById(R.id.edtNombre);
-        edtEmail=(EditText)findViewById(R.id.edtEmail);
-        edtEmpName=(EditText)findViewById(R.id.edEmprName);
-        edtPass=(EditText)findViewById(R.id.edtPassword);
+        edtUser = (EditText) findViewById(R.id.edtNombre);
+        edtEmail = (EditText) findViewById(R.id.edtEmail);
+        edtEmpName = (EditText) findViewById(R.id.edEmprName);
+        edtPass = (EditText) findViewById(R.id.edtPassword);
 
-        chbCondition=(CheckBox)findViewById(R.id.chbCondition);
-        btnok=(Button)findViewById(R.id.RegisrobtnOK);
+        chbCondition = (CheckBox) findViewById(R.id.chbCondition);
+        btnok = (Button) findViewById(R.id.RegisrobtnOK);
 
-        spLoca=(Spinner)findViewById(R.id.spLocalidad);
-        spProv=(Spinner)findViewById(R.id.spProvin);
-
-
-        rdgType=(RadioGroup)findViewById(R.id.rdgType);
+        spLoca = (Spinner) findViewById(R.id.spLocalidad);
+        spProv = (Spinner) findViewById(R.id.spProvin);
 
 
-        //rdbEmpr=(RadioButton)findViewById(R.id.rdbEmpresa);
-        //rdbUser=(RadioButton)findViewById(R.id.rdbParticular);
+        rdgType = (RadioGroup) findViewById(R.id.rdgType);
 
+        initRadioClient();
 
+    }
+    private void initRadioClient(){
         edtEmpName.setVisibility(View.GONE);
 
         rdgType.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -77,6 +67,7 @@ public class SignUp extends AppCompatActivity {
 
     //click del boton
     public void signUp(View view){
+
        switch (validate()){
            case 1:
                Toast.makeText(getApplicationContext(),"Email formato incorrecto",Toast.LENGTH_LONG).show();
@@ -118,7 +109,7 @@ public class SignUp extends AppCompatActivity {
                         break;
 
                     case R.id.spLocalidad:
-
+                        showCitySelected();
                         break;
                 }
             }
@@ -131,6 +122,13 @@ public class SignUp extends AppCompatActivity {
         this.spProv.setOnItemSelectedListener(spinerListener);
         this.spLoca.setOnItemSelectedListener(spinerListener);
 
+    }
+
+    private void showCitySelected() {
+        Toast.makeText(this,
+                "Happy toast "+getString(R.string.message_city,spProv.getSelectedItem().toString(),
+                        spLoca.getSelectedItem().toString()),Toast.LENGTH_LONG)
+                .show();
     }
 
     private void loadFromProv(int pos){
@@ -148,6 +146,7 @@ public class SignUp extends AppCompatActivity {
     public int validate(){
 
         int res=0;
+
         if(!Patterns.EMAIL_ADDRESS.matcher(edtEmail.getText().toString()).matches()){
             res=1;
         }
@@ -159,7 +158,6 @@ public class SignUp extends AppCompatActivity {
 
         return res;
     }
-
 
     //region alternativa al checkedchange
 
@@ -182,7 +180,5 @@ public class SignUp extends AppCompatActivity {
     }
    */
     //endregion
-
-
 
 }
