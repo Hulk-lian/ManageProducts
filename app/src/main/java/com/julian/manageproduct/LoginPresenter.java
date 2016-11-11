@@ -1,17 +1,42 @@
 package com.julian.manageproduct;
 
 import android.content.Context;
+import android.content.Intent;
 
-public class LoginPresenter implements IValidateUser.Presenter {
+import static com.julian.manageproduct.IValidateAccount.Presenter.validateCredentialsUser;
+import static com.julian.manageproduct.IValidateAccount.Presenter.validateCredentialsPass;
 
-    private IValidateUser.msgView msgView;
-    private String patronpassNum="((?=.*[0-9]).*)";//number
-    private String patronpassMayus="(.*(?=.*[A-Z]).*)";//characters uppercase
+public class LoginPresenter implements IValidateAccount.Presenter {
 
-    public LoginPresenter(IValidateUser.msgView view) {
-        this.msgView=view;
+    private IValidateAccount.View view;
+    private int validateUser;
+    private int validatePass;
+
+    public LoginPresenter(IValidateAccount.View view) {
+        this.view=view;
     }
 
+
+    public void validateCredentialsLogin(String user,String pass){
+        validateUser=validateCredentialsUser(user);
+        validatePass=validateCredentialsPass(pass);
+
+        if((validateUser==IValidateAccount.OK) && (validatePass==IValidateAccount.OK)) {
+
+            Intent intent = new Intent((Context) view, ListProduct_Activity.class);
+            ((Context) view).startActivity(intent);
+        }
+        else{
+            switch (validateUser){
+                //mostar erorr/
+            }
+            switch (validatePass){
+                //
+            }
+        }
+    }
+
+   /*
     @Override
     public boolean validateCredentialsUser(String user) {
         String mensRes="";//message out
@@ -65,5 +90,6 @@ public class LoginPresenter implements IValidateUser.Presenter {
         msgView.setMessageError(mensRes,errCode);
         return result;
     }
+    */
 
 }

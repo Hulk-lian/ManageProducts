@@ -1,18 +1,23 @@
 package com.julian.manageproduct;
 
-public interface IValidateUser {
+import android.util.Patterns;
 
-    int PASSWORD_DIGIT=1;
-    int PASSWORD_CASE = 2;
-    int PASSWORD_LENGTH = 3;
-    int DATA_EMPTY=4;
+/**
+ * Created by usuario on 11/11/16.
+ */
 
-    interface msgView{
-        public void setMessageError(String error, int errcCode);
-    }
-    interface Presenter{
+public interface IValidateUser extends IValidateAccount {
 
-        boolean validateCredentialsUser(String user);
-        boolean validateCredentialsPass(String pass);
+    int EMAIL_INVALID=14;
+
+    interface  Presenter
+    {
+        if(Patterns.EMAIL_ADRESS.matcher(email).matches()){
+            return EMAIL_INVALID;
+        }
+        else
+        {
+            return OK;
+        }
     }
 }

@@ -11,9 +11,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Login_Activity extends AppCompatActivity implements IValidateUser.msgView{
+public class Login_Activity extends AppCompatActivity implements IValidateAccount.msgView{
 
-    private IValidateUser.Presenter mLoginP;
+    private IValidateAccount.Presenter mLoginP;
     private EditText mEdtPassw, mEdtUser;
     private TextInputLayout mTilPass, mTilUser;
     private Button mBtnLogin;
