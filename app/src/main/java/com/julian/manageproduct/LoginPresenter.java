@@ -3,6 +3,10 @@ package com.julian.manageproduct;
 import android.content.Context;
 import android.content.Intent;
 
+import com.julian.manageproduct.utils.ErrorMapUtils;
+
+import java.util.Map;
+
 import static com.julian.manageproduct.IValidateAccount.Presenter.validateCredentialsUser;
 import static com.julian.manageproduct.IValidateAccount.Presenter.validateCredentialsPass;
 
@@ -11,9 +15,11 @@ public class LoginPresenter implements IValidateAccount.Presenter {
     private IValidateAccount.View view;
     private int validateUser;
     private int validatePass;
+    private Context context;
 
-    public LoginPresenter(IValidateAccount.View view) {
+    public LoginPresenter(IValidateUser.View view) {
         this.view=view;
+        context=(Context)view;
     }
 
 
@@ -21,20 +27,25 @@ public class LoginPresenter implements IValidateAccount.Presenter {
         validateUser=validateCredentialsUser(user);
         validatePass=validateCredentialsPass(pass);
 
-        if((validateUser==IValidateAccount.OK) && (validatePass==IValidateAccount.OK)) {
+        if((validateUser==Error.OK)) {
 
-            Intent intent = new Intent((Context) view, ListProduct_Activity.class);
-            ((Context) view).startActivity(intent);
-        }
-        else{
-            switch (validateUser){
-                //mostar erorr/
+            if (validatePass==Error.OK) {
+                Intent intent = new Intent((Context) view, ListProduct_Activity.class);
+                view.starActivity(intent);
             }
-            switch (validatePass){
-                //
+            else {
+                String nameResource= ErrorMapUtils.getErrorMap(context).get(String.valueOf(validateUser));
+                view.setMessageError(nameResource,R.id.tilPassword);
             }
+        } else {
+            //obtiene el valor de dentro de error_map
+            String nameResource= ErrorMapUtils.getErrorMap(context).get(String.valueOf(validateUser));
+            view.setMessageError(nameResource,R.id.tilUser);
         }
+
+
     }
+}
 
    /*
     @Override
@@ -92,4 +103,3 @@ public class LoginPresenter implements IValidateAccount.Presenter {
     }
     */
 
-}

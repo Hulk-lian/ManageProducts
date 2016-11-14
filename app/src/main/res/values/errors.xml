@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="passCase">La clave debe de contener al menos una letra mayuscula</string>
+    <string name="passDigit">La clave debe de contener al menos un numero</string>
+    <string name="passMinLength">La clave debe de contener al menos 8 caracteres</string>
+    <string name="dataEmpty">El campo está vacio</string>
+</resources>
